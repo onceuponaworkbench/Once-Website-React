@@ -33,11 +33,25 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      # *** NEW STEP: Combine 'public' and 'src' into a unified '_site' folder ***
+      - name: Prepare Site Directory
+        run: |
+          # 1. Create the final deployment folder
+          mkdir _site
+          # 2. Move contents of 'public' (including index.html) into _site
+          mv public/* _site/
+          # 3. Copy the 'src' folder and its contents into _site
+          cp -r src _site/
+
+      # *** MODIFIED STEP: Upload the unified '_site' folder ***
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload files only from the 'public' directory
-          path: 'public'
+          # Point the uploader to the new unified folder
+          path: '_site' 
+      
+      # *** The rest of the deployment is the same ***
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
