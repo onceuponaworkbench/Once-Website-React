@@ -1,3 +1,5 @@
+// Add this import to the top of your home.js file
+import { HashLink as Link } from 'react-router-hash-link' 
 import React from 'react'
 
 import Script from 'dangerous-html/react'
@@ -15,8 +17,7 @@ const Home = (props) => {
         <meta property="og:title" content="Once Website" />
         <link
           rel="canonical"
-          // --- FIX 1: Canonical URL updated for SEO ---
-          href="https://onceuponaworkbench.com/" 
+          href="https://onceuponaworkbench.com/"
         />
       </Helmet>
       <Navigation></Navigation>
@@ -118,9 +119,10 @@ details[open] .faq-icon {
               lasting memories for your family. Handcrafted with care in the
               heart of Utah.
             </p>
-            <button className="home-thq-btn-elm1 btn-primary btn-lg btn">
+            {/* 2. CHANGE: Replace <button> with <Link> and add 'to' attribute */}
+            <Link to="/#quote" className="home-thq-btn-elm1 btn-primary btn-lg btn">
               Start Your Playhouse Build
-            </button>
+            </Link>
           </div>
           <div className="home-thq-hero-image-column-elm">
             <div className="hero-featured-image">
