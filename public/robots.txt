@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://that-alarmed-squid-y5k0jb.teleporthq.app/sitemap.xml
+Sitemap: https://onceuponaworkbench.com/sitemap.xml
