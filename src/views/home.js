@@ -1,7 +1,6 @@
 // Add this import to the top of your home.js file
-import { HashLink as Link } from 'react-router-hash-link' 
 import React from 'react'
-
+import { HashLink as Link } from 'react-router-hash-link' 
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
 
